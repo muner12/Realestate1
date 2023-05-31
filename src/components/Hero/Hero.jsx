@@ -1,6 +1,7 @@
 import React from 'react';
-import {HiLocationMarker} from 'react-icons/hi'
-import CountUp from 'react-countup'
+import {HiLocationMarker} from 'react-icons/hi';
+import CountUp from 'react-countup';
+import {motion} from 'framer-motion';
 import './Hero.css';
 const Hero = () => {
     return (
@@ -10,9 +11,18 @@ const Hero = () => {
                 <div className="flexColStart hero-left">
                     <div className="hero-title">
                         <div className='orange-circle'/>
-                        <h1>
+                        <motion.h1
+                        initial={{y:"2rem",opacity:0}}
+                        animate={{y:0,opacity:1}}
+                        transition={{
+                            duration:2,
+                            type:"spring",
+
+                        }}
+
+                        >
                             Discover <br/> Most Suitable <br/>Property
-                        </h1>
+                        </motion.h1>
                     </div>
                     <div className="flexColStart hero-description">
                         <span className='secondary-text'>Find a v variety of properties that suit yo very easily</span>
@@ -49,9 +59,16 @@ const Hero = () => {
                 </div>
                 {/* right side */}
                 <div className="flexCenter hero-right">
-                    <div className="image-container">
+                    <motion.div 
+                    initial={{x:"7rem",opacity:0}}
+                    animate={{x:0,opacity:1}}
+                    transition={{
+                        duration:3,
+                        type:"spring"
+                    }}
+                    className="image-container">
                         <img src='./hero-image.png'/>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>
